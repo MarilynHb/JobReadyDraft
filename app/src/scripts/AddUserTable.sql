@@ -8,5 +8,6 @@ CREATE TABLE User (
 	Location varchar(20) NULL,
 	IndustryId bigint NULL,
 	RegistrationDate datetime(6),
+		CONSTRAINT FK_User_Industry FOREIGN KEY(IndustryId) REFERENCES Industry(Id),
 	PRIMARY KEY (Id)
 );
