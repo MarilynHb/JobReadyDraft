@@ -69,6 +69,7 @@ CREATE TABLE Job (
 	CompanyId BIGINT NOT NULL,
 	Description varchar(20) NOT NULL,
 	JobLevelId INT NOT NULL,
+	IsActive BIT NOT NULL,
 	PostedOn datetime(6) NOT NULL,
 	CONSTRAINT PK_Job PRIMARY KEY (Id),
 	CONSTRAINT FK_Job_Company FOREIGN KEY (CompanyId) REFERENCES User(Id)
