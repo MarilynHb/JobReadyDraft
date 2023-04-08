@@ -23,12 +23,11 @@ if ($conn->query($sql) !== TRUE) {
     exit();
 }
 
-//Once user is added, insert their skills
 $user_id = $conn->insert_id;
 $skills = $_POST['skills'];
 
 if (!empty($skills)) {
-    $skills_sql = "INSERT INTO UserSkill (user_id, skill) VALUES ";
+    $skills_sql = "INSERT INTO UserSkill (userId, skillId) VALUES ";
     foreach ($skills as $skill) {
         $skills_sql .= "('$user_id', '$skill'),";
     }
