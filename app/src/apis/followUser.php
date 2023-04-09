@@ -1,5 +1,5 @@
 <?php
-include connection.php;
+include "connection.php";
 
 // Get the follower and followee IDs from the request
 $user_id = $_POST['user_id'];
