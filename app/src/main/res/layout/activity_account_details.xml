@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:minHeight="12dp"
         android:background="@color/celestial_blue"
-        android:padding="12dp">
+        android:padding="10dp">
 
         <TextView
             android:layout_width="match_parent"
