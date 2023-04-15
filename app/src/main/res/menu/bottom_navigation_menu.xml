@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home_icon"/>
+    <item
+        android:id="@+id/job"
+        android:title="job"
+        android:icon="@drawable/job_icon"/>
+    <item
+        android:id="@+id/post"
+        android:title="post"
+        android:icon="@drawable/post_icon"/>
+    <item
+        android:id="@+id/notifications"
+        android:title="notifications"
+        android:icon="@drawable/notifications_icon"/>
+    <item
+        android:id="@+id/settings"
+        android:title="settings"
+        android:icon="@drawable/settings_icon"/>
+</menu>

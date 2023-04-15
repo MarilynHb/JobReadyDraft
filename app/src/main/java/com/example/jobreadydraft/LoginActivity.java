@@ -3,7 +3,9 @@ package com.example.jobreadydraft;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mUsername;
     private EditText mPassword;
     private Button mLoginBtn;
-    private String url = "http://10.0.2.2:80/JobReady/login.php";
+    private String url = "http://10.0.2.2/R/login.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         mUsername = findViewById(R.id.username);
         mPassword = findViewById(R.id.password);
         mLoginBtn = findViewById(R.id.login);
+
+        final String MY_PREFS_NAME = "MyPrefsFile";
+        final String USERNAME_KEY = "username";
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +51,26 @@ public class LoginActivity extends AppCompatActivity {
                             new Response.Listener<String>() {
                                 @Override
                                 public void onResponse(String response) {
+                                    Log.d("LoginActivity", "Response: " + response);
+
+
                                     try {
                                         JSONObject jsonObject = new JSONObject(response);
                                         int success = jsonObject.getInt("success");
 
                                         if (success == 1) {
                                             Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+
+                                            SharedPreferences preferences = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
+                                            SharedPreferences.Editor editor = preferences.edit();
+                                            editor.putString(USERNAME_KEY, username);
+
+                                            editor.apply();
+
+
+                                            Intent intent = new Intent(LoginActivity.this, profile.class);
+                                            startActivity(intent);
+
                                         } else {
                                             Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                                         }
