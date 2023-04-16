@@ -24,11 +24,7 @@
             android:padding="10dp">
 
 
-            <ImageView
-                android:id="@+id/profile_image"
-                android:layout_width="70dp"
-                android:layout_height="78dp"
-                android:src="@drawable/profile_picture" />
+
 
 
             <!-- Bottom bar -->
@@ -36,47 +32,42 @@
 
             <TextView
                 android:id="@+id/username"
-                android:layout_width="206dp"
+                android:layout_width="271dp"
                 android:layout_height="75dp"
+                android:gravity="center_vertical"
                 android:paddingLeft="12dp"
-                android:text="Your username"
-                android:textSize="21sp"
+                android:text="username"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
-
+            <Button
+                android:id="@+id/postbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/celestial_blue"
+                android:text="post"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="30dp" />
 
 
         </LinearLayout>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
-            app:cardCornerRadius="30dp"
-            app:cardElevation="10dp">
 
-            <EditText
-                android:id="@+id/post_text"
-                android:layout_width="309dp"
-                android:layout_height="368dp"
-                android:hint="What's happening?"
-                android:padding="10dp"
-                android:textSize="16sp" />
-        </androidx.cardview.widget.CardView>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/postbtn"
-            android:text="post"
-            android:textSize="13sp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/celestial_blue"
-            app:cornerRadius = "20dp"/>
+        <EditText
+            android:id="@+id/post"
+            android:layout_width="309dp"
+            android:layout_height="428dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittext_border"
+            android:hint="What's happening?"
+            android:gravity="center"
 
-        </LinearLayout>
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
 
 
 
